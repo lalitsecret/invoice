@@ -1,0 +1,93 @@
+body
+{
+	margin:0;
+	font-family: calibri;
+}
+
+.top
+{
+	width: 100vw;
+	height: 20vh;
+	background: silver;
+	position: fixed;
+	top:0;
+	left:0;
+	overflow: auto;
+}
+
+.left
+{
+	position: fixed;
+	top:20vh;
+	left:0;
+	width: 20vw;
+	height: 80vh;
+	background: #333;
+	overflow: auto;
+}
+
+.right
+{
+	position: fixed;
+	top:20vh;
+	background: grey;
+	right:0;
+	width: 80vw;
+	height: 80vh;
+}
+.right .table
+{
+	height: 75vh;
+	background: white;
+	overflow: auto;
+}
+.right .subtotal
+{
+	height: 5vh;
+	background: black;
+	color:white;
+}
+
+.drawer
+{
+	position: fixed;
+	top:0;
+	right: 0;
+	width: 30vw;
+	height: 100vh;
+	overflow: auto;
+	background:lightgrey;
+	transition: 0.5s;
+	transform: translateX(100%);
+	word-wrap: break-word;
+	padding: 5%;
+}
+.drawer.active
+{
+	transform: translateX(0%);
+}
+
+
+table
+{
+	width: 100%;
+	text-align: center;
+}
+
+thead
+{
+	background: black;
+	color:white;
+}
+
+.search-bar
+{
+	height:5vh;
+}
+.content-bar
+{
+	height:70vh;
+	overflow: auto;
+}
+
+

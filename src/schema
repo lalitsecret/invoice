@@ -1,0 +1,9 @@
+assets
+	/css/
+
+components
+	Main store
+		App
+
+helpers
+	redux 
