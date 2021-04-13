@@ -36,6 +36,15 @@ function Table()
 	{
 		cols=Object.keys(a[0])
 	}
+
+
+
+	for(let item2 of state.theadFilters)
+	{
+		a=a.filter(item3=>item3[item2["name"]].toString().includes(item2["value"]))
+	}
+
+
 	return <div>
 		{/*<div className="search">
 			<table cellPadding={0} cellSpacing={0}>
@@ -48,13 +57,14 @@ function Table()
 		<div className="content">
 			<table cellPadding={0} cellSpacing={0}>
 				<thead>
-					<Columns a={cols} />
+					<Columns />
 				</thead>
 					<tbody>
 						{a.slice(start,start+pp).map(item=>
-								<tr>
+								<tr key={item.id}>
 									{cols.map(key=>
 										<Cell 
+										key={key}
 										clickable={true} 
 										information={{name:"lalit",email:"lalir@gmail.com"}}
 										>{item[key]}</Cell>

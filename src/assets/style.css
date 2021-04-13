@@ -117,3 +117,10 @@ background: black;
 color:white;
 	
 }
+
+th input
+{
+	background: black;
+	color:white;
+	border:0;
+}

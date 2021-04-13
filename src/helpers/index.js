@@ -1,3 +1,15 @@
+export function get_intial_headers(a)
+{
+	if(a.length>0)
+	{
+		return Object.keys(a[0]).map(item=>({name:item,value:""}))
+	}
+	else
+	{
+		return []
+	}
+}
+
 export function _between(a,column,val1,val2)
 {
 	return a.filter(item=>+item[column]>= val1 && +item[column]<=val2)
@@ -80,6 +92,8 @@ export function decide(a,filter)
 		return a
 	}
 }
+
+
 
 
 
