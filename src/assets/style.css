@@ -72,12 +72,16 @@ table
 {
 	width: 100%;
 	text-align: center;
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 thead
 {
 	background: black;
 	color:white;
+	position: sticky;
+
 }
 
 .search-bar
@@ -90,4 +94,26 @@ thead
 	overflow: auto;
 }
 
+table {
+overflow-y: auto;
+height: 106px;
+}
+table thead th {
+position: sticky;
+top: 0;
+}
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th,
+td {
+padding: 8px 16px;
+}
 
+th
+{
+background: black;
+color:white;
+	
+}
