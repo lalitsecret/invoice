@@ -2,7 +2,7 @@ export function get_intial_headers(a)
 {
 	if(a.length>0)
 	{
-		return Object.keys(a[0]).map(item=>({name:item,value:""}))
+		return Object.keys(a[0]).map(item=>({name:item,value:"",status:true}))
 	}
 	else
 	{
@@ -95,5 +95,9 @@ export function decide(a,filter)
 
 
 
-
+export function  _information(a,col,val)
+{
+	// console.log(a.find(item=>item[col]===val))
+	return a.find(item=>item[col]===val)
+}
 

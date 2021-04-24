@@ -48,6 +48,7 @@ body
 	color:white;
 }
 
+
 .drawer
 {
 	position: fixed;
@@ -67,6 +68,18 @@ body
 	transform: translateX(0%);
 }
 
+.drawer button
+{
+	position: fixed;
+	z-index: 1000;
+	top:0;
+	right:0;
+	padding: 20px;
+	background: black;
+	color:white;
+	border:0;
+
+}
 
 table
 {
@@ -123,4 +136,54 @@ th input
 	background: black;
 	color:white;
 	border:0;
+}
+
+
+
+.popup
+{
+	position: fixed;
+	top:50%;
+	left:50%;
+	background: black;
+	color:white;
+	padding: 1%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	height: 80vh;
+	overflow: auto;	
+}
+
+
+
+
+.dnd
+{
+	display: flex;
+	justify-content: space-around;
+}
+.dnd>div
+{
+	width: 33.3%;
+	height: 50vh;
+	overflow: auto;
+}
+.dnd>.dnd-item1,
+.dnd>.dnd-item3
+{
+	background: white;
+	color:black;
+	padding: 10px;
+}
+
+.selected-p-in-popup
+{
+	background: grey;
+}
+
+.dnd>div>p
+{
+	margin:0;
+	padding: 10px;
+	cursor: pointer;
 }

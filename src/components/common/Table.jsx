@@ -30,13 +30,8 @@ function Table()
 	},[])
 
 	let state=useSelector(s=>s)
-	let a=state.data.posts
-	let cols=[]
-	if(a.length>0)
-	{
-		cols=Object.keys(a[0])
-	}
-
+	let a=state.data
+	let cols=state.theadFilters
 
 
 	for(let item2 of state.theadFilters)
@@ -64,10 +59,11 @@ function Table()
 								<tr key={item.id}>
 									{cols.map(key=>
 										<Cell 
-										key={key}
-										clickable={true} 
-										information={{name:"lalit",email:"lalir@gmail.com"}}
-										>{item[key]}</Cell>
+										key={key.name}
+										clickable={key.status} 
+										information={item}
+										val={item[key.name]}
+										>{item[key.name]}</Cell>
 									)}	
 								</tr>
 						)}
