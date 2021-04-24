@@ -7,7 +7,9 @@ const initialState={
 	theadFilters:get_intial_headers(data.products),
 	leftFiltersList:{},
 	popup:{information:{},status:false},
-	activePopupFilterName:""
+	activePopupFilterName:"",
+	activePopupFilterOrder:true,
+
 }
 
 
@@ -125,8 +127,14 @@ function reducer(state=initialState,action)
 		case "popup close":
 					return {
 						...state,
-					popup:{...state.popup,status:false}
+						popup:{...state.popup,status:false}
 					}
+		case "activePopupFilterOrder":
+					return {
+						...state,
+						activePopupFilterOrder:action.payload
+					}
+					
 		default:
 			return state
 	}

@@ -21,7 +21,7 @@ function Table()
 			setstart(0)
 		}
 		
-		console.log(e.code)
+		// console.log(e.code)
 		
 	}	
 

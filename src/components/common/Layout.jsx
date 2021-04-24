@@ -11,13 +11,17 @@ function Layout()
 	let state=useSelector(s=>s)
 	let dispatch=useDispatch()
 
-	let {activePopupFilterName,leftFiltersList}=state
+	let {activePopupFilterName,leftFiltersList,activePopupFilterOrder}=state
 
 	// activePopupFilterName
 	// leftFiltersList
 
 	const [selected,setSelected]=React.useState("")
 	const [search,setsearch]=React.useState("")
+
+
+
+
 
 	const p1=() =>{
 		
@@ -93,21 +97,36 @@ function Layout()
 
 		// console.log(a)
 		// console.log(b)
+		a=a.sort((arrItem1,arrItem2) =>{
+			if(activePopupFilterOrder)
+			{
+				if(arrItem1.length>arrItem2.length){return 1}
+				else {return -1}	
+				return 0
+					
+			}
+			else
+			{
+				if(arrItem2.length>arrItem1.length){return 1}
+				else {return -1}	
+				return 0
+			}
+		})
 
 		popupContent=<div className={state.popup.status?'popup active':'popup'}>
 			<button className="close" onClick={e=>dispatch({type:"popup close"})}>X</button>
 				
-				<button>sort by  asc</button>
-				<button>sort by  desc</button>
+				<button onClick={e=>dispatch({type:"activePopupFilterOrder",payload:true})}>sort by  asc</button>
+				<button onClick={e=>dispatch({type:"activePopupFilterOrder",payload:false})}>sort by  desc</button>
 				<input value={search} onChange={e=>setsearch(e.target.value)} placeholder="filter by "/>
 
 				<div className="dnd">
 					<div  className="dnd-item1">
-						{a
-							.filter(item=>item.toString().includes(search))
+						{a.filter(item=>item.toString().includes(search))
 							.filter(item=>b.some(x=>x===item)===false)
-							.map(item=>
+							.map((item,index) =>
 							<p 
+							key={index*55+2}
 							onClick={e=>setSelected(item)} 
 							className={selected===item?'selected-p-in-popup':''}>{item}</p>
 						)}
@@ -119,8 +138,10 @@ function Layout()
 						<button onClick={p4}> {"<"} </button>
 					</div>
 					<div  className="dnd-item3">
-						{b.map(item=>
-							<p onClick={e=>setSelected(item)} 
+						{b.map((item,index) =>
+							<p 
+							key={index*99+1}
+							onClick={e=>setSelected(item)} 
 							className={selected===item?'selected-p-in-popup':''}>{item}</p>
 						)}
 					</div>

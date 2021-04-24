@@ -187,3 +187,27 @@ th input
 	padding: 10px;
 	cursor: pointer;
 }
+
+
+.scroll-x-20vw
+{
+	width: 20vw;
+	overflow-y: auto;
+	height: 40vh;
+}
+
+.scroll-x-20vw::-webkit-scrollbar
+{
+	width:8px;
+	background: linear-gradient(45deg,white,silver,black);
+}
+.chip
+{
+	margin:3px;
+	padding: 5px 7px;
+	background: black;
+	color:white;
+	border-radius: 100px;
+	display: inline-table;
+	zoom:0.7;
+}

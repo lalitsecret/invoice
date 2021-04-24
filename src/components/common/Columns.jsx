@@ -15,8 +15,8 @@ function Columns(props)
 		dispatch({type:"theadFilters typing",payload:theadFilters})
 	} 
 	return <tr>
-		{theadFilters.map(item=>
-		<th>
+		{theadFilters.map((item,index) =>
+		<th key={index}>
 			<input onChange={e=>handleChange(e,item)} placeholder={item.name} value={item.value} />
 		</th>)}
 	</tr>
